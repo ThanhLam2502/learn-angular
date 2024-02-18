@@ -1,0 +1,14 @@
+<div class="form-inner">
+    @if (label) {
+        <label>{{ label }} {{ required ? '*' : '' }}</label>
+    }
+    <input class=""
+           type="text"
+           placeholder="{{placeHolder}}"
+           [name]="name"
+           [disabled]="disabled"
+           [value]="value"
+           (input)="markAsChanged($event)"
+           (blur)="markAsTouched()">
+</div>
+<pre>{{ control.errors | json }}</pre>
